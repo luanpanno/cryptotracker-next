@@ -8,7 +8,7 @@ import { Layout } from '../components/Layout';
 import { SearchBar } from '../components/SearchBar';
 import { Coin } from '../models/domain/Coin';
 
-const Main = styled.main`
+const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,14 +35,14 @@ export default function Home({ coins }: Props) {
 
   return (
     <Layout>
-      <Main>
+      <Container>
         <SearchBar
           placeholder="Search for coins"
           onChange={handleSearchChange}
         />
 
         <CoinList coins={getAllCoins()} />
-      </Main>
+      </Container>
     </Layout>
   );
 }

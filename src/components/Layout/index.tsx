@@ -75,7 +75,7 @@ export const Layout: React.FC<Props> = ({
           </a>
         </Link>
       </header>
-      <>{children}</>
+      <main>{children}</main>
     </Container>
   );
 };

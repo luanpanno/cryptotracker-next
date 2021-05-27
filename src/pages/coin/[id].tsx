@@ -15,26 +15,48 @@ export const Container = styled.div`
     align-items: center;
     justify-content: center;
     border: 1px solid white;
-    padding: 24px;
+    padding: 24px 64px;
     border-radius: 4px;
+    gap: 24px;
+
+    img {
+      height: 120px;
+    }
+
+    & > div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+
+      h1 {
+        margin: 0;
+      }
+
+      p {
+        margin: 0;
+      }
+    }
+
+    & > p {
+      font-size: 1.2rem;
+    }
   }
 `;
 
 const CoinPage = ({ coin }) => {
   return (
     <Layout>
-      <main>
-        <Container>
+      <Container>
+        <div>
+          <img src={coin?.image.large} alt={coin?.name} />
           <div>
-            <img src={coin?.image.large} alt={coin?.name} />
-            <div>
-              <h1>{coin?.name}</h1>
-              <p>{coin?.symbol}</p>
-            </div>
-            <p>$ {coin?.market_data.current_price.usd.toLocaleString()}</p>
+            <h1>{coin?.name}</h1>
+            <p>{coin?.symbol}</p>
           </div>
-        </Container>
-      </main>
+          <p>$ {coin?.market_data.current_price.usd.toLocaleString()}</p>
+        </div>
+      </Container>
     </Layout>
   );
 };

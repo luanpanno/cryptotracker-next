@@ -15,4 +15,8 @@ export const Container = styled.div`
     height: 200px;
     width: 200px;
   }
+
+  main {
+    background-color: #101012;
+  }
 `;
